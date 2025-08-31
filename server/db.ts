@@ -7,15 +7,9 @@ import * as schema from "@shared/schema";
 neonConfig.webSocketConstructor = ws;
 
 const url = process.env.DATABASE_URL;
-if (!url) {
-  throw new Error("DATABASE_URL must be set. Did you forget to provision a database?");
-}
-
-// This driver MUST use the Neon *compute* endpoint (no -pooler) and no channel_binding.
+if (!url) throw new Error("DATABASE_URL must be set. Did you forget to provision a database?");
 if (url.includes("-pooler") || url.includes("channel_binding=")) {
-  throw new Error(
-    "DATABASE_URL must be the Neon compute endpoint (no '-pooler', no 'channel_binding')."
-  );
+  throw new Error("DATABASE_URL must be the Neon compute endpoint (no '-pooler', no 'channel_binding').");
 }
 
 export const pool = new Pool({ connectionString: url });
