@@ -140,11 +140,11 @@ export default function AdminLogin({ onLogin }: AdminLoginProps) {
             </form>
           </Form>
 
-          <div className="mt-6 p-4 bg-muted/50 rounded-lg" data-testid="admin-credentials-info">
+          {/* <div className="mt-6 p-4 bg-muted/50 rounded-lg" data-testid="admin-credentials-info">
             <h4 className="text-sm font-medium text-foreground mb-2">Default Admin Credentials:</h4>
             <p className="text-sm text-muted-foreground">Username: admin</p>
             <p className="text-sm text-muted-foreground">Password: admin123</p>
-          </div>
+          </div> */}
         </CardContent>
       </Card>
     </div>

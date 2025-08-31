@@ -124,9 +124,10 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             <div className="flex items-center">
-              <h1 className="text-2xl font-bold text-primary" data-testid="company-logo">
-                Wizdom Software
-              </h1>
+              <img
+                src="/images/logo.png"
+                className="h-16 w-auto"
+              />
             </div>
             
             {/* Desktop Navigation */}
@@ -398,11 +399,11 @@ export default function Home() {
               
               <div className="grid grid-cols-2 gap-6 mb-8">
                 <div className="text-center" data-testid="stat-projects">
-                  <div className="text-3xl font-bold text-primary mb-2">50+</div>
+                  <div className="text-3xl font-bold text-primary mb-2">10+</div>
                   <div className="text-muted-foreground">Projects Delivered</div>
                 </div>
                 <div className="text-center" data-testid="stat-experience">
-                  <div className="text-3xl font-bold text-primary mb-2">5+</div>
+                  <div className="text-3xl font-bold text-primary mb-2">3+</div>
                   <div className="text-muted-foreground">Years Experience</div>
                 </div>
                 <div className="text-center" data-testid="stat-satisfaction">
@@ -485,7 +486,87 @@ export default function Home() {
           </div>
 
           <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-            {/* Project 1 - Content Creation AI Assistant */}
+
+
+             {/* Project 1 - DeepScreened.com */}
+            <Card className="group overflow-hidden shadow-lg border-border hover:shadow-2xl transition-all duration-300" data-testid="portfolio-project-2">
+              <div className="relative overflow-hidden">
+                <img 
+                  src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=400" 
+                  alt="DeepScreened AI Recruitment Platform" 
+                  className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+                />
+              </div>
+              <CardContent className="p-6">
+                <div className="flex items-center justify-between mb-3">
+                  <span className="px-3 py-1 bg-cyan-500/10 text-cyan-600 text-sm font-medium rounded-full">HR Tech</span>
+                 <a
+                  href="https://deepscreened.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Visit DeepScreened"
+                >
+                  <ExternalLink
+                    className="w-5 h-5 text-muted-foreground hover:text-primary transition-colors duration-200"
+                  />
+                </a>
+                </div>
+                <h3 className="text-xl font-bold text-foreground mb-3" data-testid="project-2-title">
+                  DeepScreened AI Recruitment
+                </h3>
+                <p className="text-muted-foreground mb-4" data-testid="project-2-description">
+                  AI-powered recruitment platform that transforms technical hiring with precision screening, eliminating bias and reducing hiring time from months to days with 28% cost savings.
+                </p>
+                <div className="flex flex-wrap gap-2">
+                  <span className="px-2 py-1 bg-muted text-muted-foreground text-xs rounded">Vue.js</span>
+                  <span className="px-2 py-1 bg-muted text-muted-foreground text-xs rounded">Python</span>
+                  <span className="px-2 py-1 bg-muted text-muted-foreground text-xs rounded">Machine Learning</span>
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Project 2 - Wizdomqa.com */}
+            <Card className="group overflow-hidden shadow-lg border-border hover:shadow-2xl transition-all duration-300" data-testid="portfolio-project-wizdomqa">
+              <div className="relative overflow-hidden">
+                <img
+                  src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?auto=format&fit=crop&w=800&h=400"
+                  alt="WizdomQA — QA Automation Training (Selenium, Appium, API, CI/CD)"
+                  className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+                  loading="lazy"
+                />
+              </div>
+              <CardContent className="p-6">
+                <div className="flex items-center justify-between mb-3">
+                  <span className="px-3 py-1 bg-amber-500/10 text-amber-600 text-sm font-medium rounded-full">QA Training</span>
+                  <a
+                    href="https://www.wizdomqa.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Visit WizdomQA"
+                  >
+                    <ExternalLink className="w-5 h-5 text-muted-foreground hover:text-primary transition-colors duration-200" />
+                  </a>
+                </div>
+
+                <h3 className="text-xl font-bold text-foreground mb-3" data-testid="project-wizdomqa-title">
+                  WizdomQA — Test Automation Bootcamps
+                </h3>
+
+                <p className="text-muted-foreground mb-4" data-testid="project-wizdomqa-description">
+                  Hands-on training to become an SDET: Selenium WebDriver, Appium (mobile), API automation, Docker & CI/CD, framework design and interview prep — led from Dublin, Ireland.
+                </p>
+
+                <div className="flex flex-wrap gap-2">
+                  <span className="px-2 py-1 bg-muted text-muted-foreground text-xs rounded">Selenium</span>
+                  <span className="px-2 py-1 bg-muted text-muted-foreground text-xs rounded">Appium</span>
+                  <span className="px-2 py-1 bg-muted text-muted-foreground text-xs rounded">API Automation</span>
+                  <span className="px-2 py-1 bg-muted text-muted-foreground text-xs rounded">Docker & CI/CD</span>
+                  <span className="px-2 py-1 bg-muted text-muted-foreground text-xs rounded">SDET</span>
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Project 3 - Content Creation AI Assistant */}
             <Card className="group overflow-hidden shadow-lg border-border hover:shadow-2xl transition-all duration-300" data-testid="portfolio-project-1">
               <div className="relative overflow-hidden">
                 <img 
@@ -497,7 +578,7 @@ export default function Home() {
               <CardContent className="p-6">
                 <div className="flex items-center justify-between mb-3">
                   <span className="px-3 py-1 bg-purple-500/10 text-purple-600 text-sm font-medium rounded-full">AI Blog</span>
-                  <ExternalLink className="w-5 h-5 text-muted-foreground group-hover:text-primary transition-colors duration-200" />
+                  
                 </div>
                 <h3 className="text-xl font-bold text-foreground mb-3" data-testid="project-1-title">
                   Content Creation AI Assistant
@@ -513,45 +594,62 @@ export default function Home() {
               </CardContent>
             </Card>
 
-            {/* Project 2 - DeepScreened.com */}
-            <Card className="group overflow-hidden shadow-lg border-border hover:shadow-2xl transition-all duration-300" data-testid="portfolio-project-2">
+            {/* Project 4 - Agentic AI solution */}
+            <Card
+              className="group overflow-hidden shadow-lg border-border hover:shadow-2xl transition-all duration-300"
+              data-testid="portfolio-project-agentic-ai"
+            >
               <div className="relative overflow-hidden">
-                <img 
-                  src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=400" 
-                  alt="DeepScreened AI Recruitment Platform" 
+                <img
+                  src="https://images.unsplash.com/photo-1555255707-c07966088b7b?auto=format&fit=crop&w=800&h=400"
+                  alt="Agentic AI automations built with n8n"
                   className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+                  loading="lazy"
                 />
               </div>
+
               <CardContent className="p-6">
                 <div className="flex items-center justify-between mb-3">
-                  <span className="px-3 py-1 bg-cyan-500/10 text-cyan-600 text-sm font-medium rounded-full">HR Tech</span>
-                  <ExternalLink className="w-5 h-5 text-muted-foreground group-hover:text-primary transition-colors duration-200" />
+                  <span className="px-3 py-1 bg-emerald-500/10 text-emerald-600 text-sm font-medium rounded-full">
+                    Agentic AI
+                  </span>
+                  {/* no external link on purpose */}
                 </div>
-                <h3 className="text-xl font-bold text-foreground mb-3" data-testid="project-2-title">
-                  DeepScreened AI Recruitment
+
+                <h3
+                  className="text-xl font-bold text-foreground mb-3"
+                  data-testid="project-agentic-title"
+                >
+                  Agentic AI Workflows with n8n
                 </h3>
-                <p className="text-muted-foreground mb-4" data-testid="project-2-description">
-                  AI-powered recruitment platform that transforms technical hiring with precision screening, eliminating bias and reducing hiring time from months to days with 28% cost savings.
+
+                <p
+                  className="text-muted-foreground mb-4"
+                  data-testid="project-agentic-description"
+                >
+                  Autonomous, event-driven agents orchestrated in n8n—planning, tool use, and
+                  memory—to run end-to-end business processes. We connect LLMs with webhooks,
+                  queues, and your data to automate complex workflows.
                 </p>
+
                 <div className="flex flex-wrap gap-2">
-                  <span className="px-2 py-1 bg-muted text-muted-foreground text-xs rounded">Vue.js</span>
-                  <span className="px-2 py-1 bg-muted text-muted-foreground text-xs rounded">Python</span>
-                  <span className="px-2 py-1 bg-muted text-muted-foreground text-xs rounded">Machine Learning</span>
+                  <span className="px-2 py-1 bg-muted text-muted-foreground text-xs rounded">n8n</span>
+                  <span className="px-2 py-1 bg-muted text-muted-foreground text-xs rounded">OpenAI</span>
+                  <span className="px-2 py-1 bg-muted text-muted-foreground text-xs rounded">Webhooks</span>
+                  <span className="px-2 py-1 bg-muted text-muted-foreground text-xs rounded">PostgreSQL</span>
+                  <span className="px-2 py-1 bg-muted text-muted-foreground text-xs rounded">Redis / Queues</span>
+                  <span className="px-2 py-1 bg-muted text-muted-foreground text-xs rounded">RAG</span>
+                  <span className="px-2 py-1 bg-muted text-muted-foreground text-xs rounded">Observability</span>
                 </div>
               </CardContent>
             </Card>
+
+
+           
+
           </div>
 
-          <div className="text-center mt-12">
-            <Button
-              onClick={() => scrollToSection('contact')}
-              className="bg-primary text-primary-foreground px-8 py-4 h-auto text-lg font-semibold hover:bg-primary/90 transition-all duration-300 transform hover:scale-105"
-              data-testid="portfolio-view-all"
-            >
-              View All Projects
-              <ArrowRight className="w-5 h-5 ml-2" />
-            </Button>
-          </div>
+         
         </div>
       </section>
 
@@ -702,71 +800,128 @@ export default function Home() {
       </section>
 
       {/* Footer */}
-      <footer className="bg-foreground text-background py-12" data-testid="footer">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-4 gap-8">
-            <div className="md:col-span-2">
-              <h3 className="text-2xl font-bold mb-4" data-testid="footer-company-name">
-                Wizdom Software Ltd
-              </h3>
-              <p className="text-background/80 mb-6 leading-relaxed" data-testid="footer-description">
-                Transforming businesses through innovative custom software solutions and cutting-edge AI SaaS products. Your technology partner for the future.
-              </p>
-              <div className="flex space-x-4" data-testid="footer-social-links">
-                <a href="#" className="w-10 h-10 bg-background/10 rounded-lg flex items-center justify-center hover:bg-background/20 transition-colors duration-200" data-testid="social-twitter">
-                  <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/>
-                  </svg>
-                </a>
-                <a href="#" className="w-10 h-10 bg-background/10 rounded-lg flex items-center justify-center hover:bg-background/20 transition-colors duration-200" data-testid="social-linkedin">
-                  <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-                  </svg>
-                </a>
-                <a href="#" className="w-10 h-10 bg-background/10 rounded-lg flex items-center justify-center hover:bg-background/20 transition-colors duration-200" data-testid="social-github">
-                  <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 5.079 3.158 9.417 7.618 11.174-.105-.949-.199-2.403.041-3.439.219-.937 1.406-5.957 1.406-5.957s-.359-.72-.359-1.781c0-1.663.967-2.911 2.168-2.911 1.024 0 1.518.769 1.518 1.688 0 1.029-.653 2.567-.992 3.992-.285 1.193.6 2.165 1.775 2.165 2.128 0 3.768-2.245 3.768-5.487 0-2.861-2.063-4.869-5.008-4.869-3.41 0-5.409 2.562-5.409 5.199 0 1.033.394 2.143.889 2.741.1.12.112.225.085.345-.09.375-.293 1.199-.334 1.363-.053.225-.172.271-.402.165-1.495-.69-2.433-2.878-2.433-4.646 0-3.776 2.748-7.252 7.92-7.252 4.158 0 7.392 2.967 7.392 6.923 0 4.135-2.607 7.462-6.233 7.462-1.214 0-2.357-.629-2.748-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 23.998 12.017 24c6.624 0 11.99-5.367 11.99-11.987C24.007 5.367 18.641.001 12.017.001z"/>
-                  </svg>
-                </a>
-              </div>
-            </div>
-            
-            <div>
-              <h4 className="font-semibold mb-4">Services</h4>
-              <ul className="space-y-2 text-background/80">
-                <li><button onClick={() => scrollToSection('services')} className="hover:text-background transition-colors duration-200">Custom Software</button></li>
-                <li><button onClick={() => scrollToSection('services')} className="hover:text-background transition-colors duration-200">AI SaaS Products</button></li>
-                <li><button onClick={() => scrollToSection('services')} className="hover:text-background transition-colors duration-200">Web Development</button></li>
-                <li><button onClick={() => scrollToSection('services')} className="hover:text-background transition-colors duration-200">Mobile Apps</button></li>
-                <li><button onClick={() => scrollToSection('services')} className="hover:text-background transition-colors duration-200">Cloud Solutions</button></li>
-              </ul>
-            </div>
-            
-            <div>
-              <h4 className="font-semibold mb-4">Company</h4>
-              <ul className="space-y-2 text-background/80">
-                <li><button onClick={() => scrollToSection('about')} className="hover:text-background transition-colors duration-200">About Us</button></li>
-                <li><button onClick={() => scrollToSection('portfolio')} className="hover:text-background transition-colors duration-200">Portfolio</button></li>
-                <li><button onClick={() => scrollToSection('contact')} className="hover:text-background transition-colors duration-200">Contact</button></li>
-                <li><a href="#" className="hover:text-background transition-colors duration-200">Careers</a></li>
-                <li><a href="#" className="hover:text-background transition-colors duration-200">Blog</a></li>
-              </ul>
+       <footer className="bg-foreground text-background py-12" data-testid="footer">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* 2 + 1 + 1 + 1 = 5 columns */}
+        <div className="grid md:grid-cols-5 gap-8">
+          {/* Company blurb */}
+          <div className="md:col-span-2">
+            <h3 className="text-2xl font-bold mb-4" data-testid="footer-company-name">
+              Wizdom Software Ltd
+            </h3>
+            <p
+              className="text-background/80 mb-6 leading-relaxed"
+              data-testid="footer-description"
+            >
+              Transforming businesses through innovative custom software solutions and
+              cutting-edge AI SaaS products. Your technology partner for the future.
+            </p>
+
+            <div className="flex space-x-4" data-testid="footer-social-links">
+              <a
+                href="#"
+                className="w-10 h-10 bg-background/10 rounded-lg flex items-center justify-center hover:bg-background/20 transition-colors duration-200"
+                aria-label="Twitter"
+                data-testid="social-twitter"
+              >
+                <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z" />
+                </svg>
+              </a>
+              <a
+                href="#"
+                className="w-10 h-10 bg-background/10 rounded-lg flex items-center justify-center hover:bg-background/20 transition-colors duration-200"
+                aria-label="LinkedIn"
+                data-testid="social-linkedin"
+              >
+                <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                </svg>
+              </a>
+              <a
+                href="#"
+                className="w-10 h-10 bg-background/10 rounded-lg flex items-center justify-center hover:bg-background/20 transition-colors duration-200"
+                aria-label="GitHub"
+                data-testid="social-github"
+              >
+                <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 5.079 3.158 9.417 7.618 11.174-.105-.949-.199-2.403.041-3.439.219-.937 1.406-5.957 1.406-5.957s-.359-.72-.359-1.781c0-1.663.967-2.911 2.168-2.911 1.024 0 1.518.769 1.518 1.688 0 1.029-.653 2.567-.992 3.992-.285 1.193.6 2.165 1.775 2.165 2.128 0 3.768-2.245 3.768-5.487 0-2.861-2.063-4.869-5.008-4.869-3.41 0-5.409 2.562-5.409 5.199 0 1.033.394 2.143.889 2.741.1.12.112.225.085.345-.09.375-.293 1.199-.334 1.363-.053.225-.172.271-.402.165-1.495-.69-2.433-2.878-2.433-4.646 0-3.776 2.748-7.252 7.92-7.252 4.158 0 7.392 2.967 7.392 6.923 0 4.135-2.607 7.462-6.233 7.462-1.214 0-2.357-.629-2.748-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 23.998 12.017 24c6.624 0 11.99-5.367 11.99-11.987C24.007 5.367 18.641.001 12.017.001z" />
+                </svg>
+              </a>
             </div>
           </div>
-          
-          <div className="border-t border-background/20 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center" data-testid="footer-bottom">
-            <p className="text-background/60 text-sm">
-              © 2024 Wizdom Software Ltd. All rights reserved.
-            </p>
-            <div className="flex space-x-6 mt-4 md:mt-0">
-              <a href="#" className="text-background/60 hover:text-background text-sm transition-colors duration-200">Privacy Policy</a>
-              <a href="#" className="text-background/60 hover:text-background text-sm transition-colors duration-200">Terms of Service</a>
-              <a href="#" className="text-background/60 hover:text-background text-sm transition-colors duration-200">Cookie Policy</a>
-              <a href="/admin" className="text-background/60 hover:text-background text-sm transition-colors duration-200" data-testid="admin-link">Admin</a>
-            </div>
+
+          {/* Services */}
+          <div>
+            <h4 className="font-semibold mb-4">Services</h4>
+            <ul className="space-y-2 text-background/80">
+              <li><button onClick={() => scrollToSection("services")} className="hover:text-background transition-colors duration-200">Custom Software</button></li>
+              <li><button onClick={() => scrollToSection("services")} className="hover:text-background transition-colors duration-200">AI SaaS Products</button></li>
+              <li><button onClick={() => scrollToSection("services")} className="hover:text-background transition-colors duration-200">Web Development</button></li>
+              <li><button onClick={() => scrollToSection("services")} className="hover:text-background transition-colors duration-200">Mobile Apps</button></li>
+              <li><button onClick={() => scrollToSection("services")} className="hover:text-background transition-colors duration-200">Cloud Solutions</button></li>
+            </ul>
+          </div>
+
+          {/* Company */}
+          <div>
+            <h4 className="font-semibold mb-4">Company</h4>
+            <ul className="space-y-2 text-background/80">
+              <li><button onClick={() => scrollToSection("about")} className="hover:text-background transition-colors duration-200">About Us</button></li>
+              <li><button onClick={() => scrollToSection("portfolio")} className="hover:text-background transition-colors duration-200">Portfolio</button></li>
+              <li><button onClick={() => scrollToSection("contact")} className="hover:text-background transition-colors duration-200">Contact</button></li>
+              <li><a href="#" className="hover:text-background transition-colors duration-200">Careers</a></li>
+              <li><a href="#" className="hover:text-background transition-colors duration-200">Blog</a></li>
+            </ul>
+          </div>
+
+          {/* Contact */}
+          <div>
+            <h4 className="font-semibold mb-4">Contact</h4>
+            <address className="not-italic space-y-3 text-background/80" data-testid="footer-contact">
+              <p className="flex items-start gap-3">
+                <MapPin className="w-5 h-5 mt-0.5 text-background/60" />
+                <span>
+                  Wizdom Software Ltd<br />
+                  62 Parklands Place,
+                  Citywest, Dublin 24
+                </span>
+              </p>
+              <p className="flex items-center gap-3">
+                <Phone className="w-5 h-5 text-background/60" />
+                <a href="tel:+353894740999" className="hover:text-background transition-colors duration-200">
+                  +353 894740999
+                </a>
+              </p>
+              <p className="flex items-center gap-3">
+                <Mail className="w-5 h-5 text-background/60" />
+                <a href="mailto:hello@wizdomsoftwares.com" className="hover:text-background transition-colors duration-200">
+                  souvik.dutta@wizdomsoftwares.com
+                </a>
+              </p>
+            </address>
           </div>
         </div>
-      </footer>
+
+        {/* bottom bar */}
+        <div
+          className="border-t border-background/20 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center"
+          data-testid="footer-bottom"
+        >
+          <p className="text-background/60 text-sm">
+            © 2025 Wizdom Software Ltd. All rights reserved.
+          </p>
+          <div className="flex space-x-6 mt-4 md:mt-0">
+            <a href="#" className="text-background/60 hover:text-background text-sm transition-colors duration-200">
+              Privacy Policy
+            </a>
+            <a href="#" className="text-background/60 hover:text-background text-sm transition-colors duration-200">
+              Terms of Service
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
     </div>
   );
 }

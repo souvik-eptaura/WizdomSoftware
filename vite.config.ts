@@ -1,3 +1,4 @@
+// vite.config.ts
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 import path from "path";
@@ -7,13 +8,8 @@ export default defineConfig({
   plugins: [
     react(),
     runtimeErrorOverlay(),
-    ...(process.env.NODE_ENV !== "production" &&
-    process.env.REPL_ID !== undefined
-      ? [
-          await import("@replit/vite-plugin-cartographer").then((m) =>
-            m.cartographer(),
-          ),
-        ]
+    ...(process.env.NODE_ENV !== "production" && process.env.REPL_ID !== undefined
+      ? [await import("@replit/vite-plugin-cartographer").then((m) => m.cartographer())]
       : []),
   ],
   resolve: {
@@ -29,9 +25,15 @@ export default defineConfig({
     emptyOutDir: true,
   },
   server: {
-    fs: {
-      strict: true,
-      deny: ["**/.*"],
+    port: 3002,               // <— Vite UI on http://localhost:3002
+    proxy: {
+      "/api": {
+        target: "http://localhost:5001", // <— your Express API
+        changeOrigin: true,
+        // if your backend DOESN'T include the "/api" prefix, uncomment:
+        // rewrite: (p) => p.replace(/^\/api/, ""),
+      },
     },
+    fs: { strict: true, deny: ["**/.*"] },
   },
 });
