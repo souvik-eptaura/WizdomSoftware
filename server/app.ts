@@ -47,11 +47,6 @@ app.use((req, _res, next) => {
   next();
 });
 
-app.use((err: any, _req: any, res: any, _next: any) => {
-  console.error("API error:", err);
-  res.status(500).json({ error: "Internal Server Error" });
-});
-
 // --------------------------------------------
 
 // Register all middleware/routes AFTER session
@@ -77,5 +72,11 @@ app.get("/api/_diag/session", (req: any, res) => {
   req.session.views = (req.session.views || 0) + 1;
   res.json({ ok: true, views: req.session.views });
 });
+
+app.use((err: any, _req: any, res: any, _next: any) => {
+  console.error("API error:", err);
+  res.status(500).json({ error: "Internal Server Error" });
+});
+
 
 export default app;
