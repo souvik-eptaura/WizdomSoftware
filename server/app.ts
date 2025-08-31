@@ -3,6 +3,7 @@ import express from "express";
 import session from "express-session";
 import connectPgSimple from "connect-pg-simple";
 import { registerRoutes } from "./routes";
+import { pool } from "./db";
 
 const app = express();
 
@@ -40,6 +41,17 @@ app.use(
     },
   })
 );
+
+app.use((req, _res, next) => {
+  console.log(`[${new Date().toISOString()}] ${req.method} ${req.url}`);
+  next();
+});
+
+app.use((err: any, _req: any, res: any, _next: any) => {
+  console.error("API error:", err);
+  res.status(500).json({ error: "Internal Server Error" });
+});
+
 // --------------------------------------------
 
 // Register all middleware/routes AFTER session
@@ -47,5 +59,23 @@ await registerRoutes(app);
 
 // Simple health check
 app.get("/api/health", (_req, res) => res.json({ ok: true }));
+
+app.get("/api/_diag/db", async (_req, res) => {
+  try {
+    const c = await pool.connect();
+    const r = await c.query("select 1");
+    c.release();
+    res.json({ ok: true, result: r.rows[0] });
+  } catch (e: any) {
+    console.error("DB diag error:", e);
+    res.status(500).json({ ok: false, error: e.message });
+  }
+});
+
+// 2b) Session probe
+app.get("/api/_diag/session", (req: any, res) => {
+  req.session.views = (req.session.views || 0) + 1;
+  res.json({ ok: true, views: req.session.views });
+});
 
 export default app;
