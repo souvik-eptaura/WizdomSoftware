@@ -61,7 +61,6 @@ export class DatabaseStorage implements IStorage {
       await this.createUser({
         username: 'admin',
         password: 'admin123',
-        role: 'admin'
       });
     }
   }
